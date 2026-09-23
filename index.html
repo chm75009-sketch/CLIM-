@@ -1303,7 +1303,7 @@ button{ color:inherit; -webkit-text-fill-color:currentColor }
           <h3><b>1</b> Votre commande</h3>
           <div class="formulaire">
             <div class="duo">
-              <div class="champ"><label for="r-numero">Numéro de commande</label><input id="r-numero" placeholder="MP-2026-1234" required></div>
+              <div class="champ"><label for="r-numero">Numéro de commande</label><input id="r-numero" placeholder="HM-2026-1234" required></div>
               <div class="champ"><label for="r-recue">Date de réception</label><input id="r-recue" type="date" required></div>
             </div>
             <div class="champ"><label for="r-objet">Ce que vous renvoyez</label>
@@ -3040,7 +3040,7 @@ Date : ......................</div>
       if (!valider()) return;
       var t = totaux();
       var mode = etat.mode === "pro" ? "devis" : document.querySelector('input[name="reglement"]:checked').value;
-      $("#numero").textContent = (etat.mode === "pro" ? "DV-2026-" : "MP-2026-") + String(Math.floor(1000 + Math.random() * 9000));
+      $("#numero").textContent = (etat.mode === "pro" ? "DV-2026-" : "HM-2026-") + String(Math.floor(1000 + Math.random() * 9000));
       $("#recap-fin").textContent = t.articles + (t.articles > 1 ? " articles, " : " article, ") + euros(t.total) +
         (mode === "devis" ? ", hors taxes, remise de volume à confirmer" :
          mode === "3fois" ? " en trois fois" : mode === "virement" ? " par virement" : " par carte") +

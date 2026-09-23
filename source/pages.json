@@ -1,0 +1,72 @@
+[
+  {
+    "chemin": "",
+    "ecran": "accueil",
+    "titre": "MaxiPower : climatiseurs tropicalisés, vendus et posés en France",
+    "description": "Dix splits tropicalisés de 12 000 à 24 000 BTU, à partir de 449 euros TTC. Calcul de puissance, livraison sous 48 heures, pose par un frigoriste certifié, garantie 3 ans et 5 ans sur le compresseur."
+  },
+  {
+    "chemin": "catalogue",
+    "ecran": "catalogue",
+    "titre": "Catalogue des climatiseurs MaxiPower",
+    "description": "Dix splits tropicalisés et quatre accessoires de pose. Filtres par puissance, surface, technologie et prix, comparateur de modèles, prix TTC livraison comprise."
+  },
+  {
+    "chemin": "professionnels",
+    "ecran": "pro",
+    "titre": "Climatisation pour hôtels, restaurants, bars et bureaux",
+    "description": "Évaluation des besoins espace par espace, devis chiffré en ligne, remise de 5 à 15 % selon le nombre d'unités, pose hors heures de service et dépannage sous 48 heures."
+  },
+  {
+    "chemin": "ou-poser-le-groupe",
+    "ecran": "pose",
+    "titre": "Où poser le groupe extérieur : les démarches, question par question",
+    "description": "Déclaration préalable en mairie, autorisation de copropriété, secteur protégé, bruit de voisinage. Six questions et la liste de vos démarches, avec la source de chaque réponse."
+  },
+  {
+    "chemin": "livraison-pose-garantie",
+    "ecran": "infos",
+    "titre": "Livraison, pose et garanties",
+    "description": "Expédition sous 48 heures, pose par un frigoriste certifié, garantie commerciale de 3 ans et 5 ans sur le compresseur, garanties légales de conformité et des vices cachés."
+  },
+  {
+    "chemin": "panier",
+    "ecran": "panier",
+    "titre": "Votre panier",
+    "description": "Le récapitulatif de votre commande : appareils, pose en option, livraison offerte."
+  },
+  {
+    "chemin": "retractation",
+    "ecran": "retractation",
+    "titre": "Renoncer à une commande",
+    "description": "Quatorze jours pour vous rétracter, sans justification et sans frais de retour. Formulaire en ligne, accusé de réception daté, remboursement sous quatorze jours."
+  },
+  {
+    "chemin": "mentions-legales",
+    "ecran": "legal",
+    "onglet": "mentions",
+    "titre": "Mentions légales",
+    "description": "HM CLIM, éditeur du site : forme juridique, capital, siège, représentant légal, directeur de la publication, hébergeur et médiation de la consommation."
+  },
+  {
+    "chemin": "conditions-de-vente",
+    "ecran": "legal",
+    "onglet": "cgv",
+    "titre": "Conditions générales de vente",
+    "description": "Prix, commande, paiement, livraison, pose, rétractation de quatorze jours, garanties légales de conformité et des vices cachés, garantie commerciale, médiation. Particuliers et professionnels."
+  },
+  {
+    "chemin": "donnees-personnelles",
+    "ecran": "legal",
+    "onglet": "donnees",
+    "titre": "Politique de confidentialité",
+    "description": "Ce que nous collectons, pourquoi, sur quelle base légale, qui le reçoit, combien de temps nous le gardons, et comment exercer vos droits auprès de nous ou de la CNIL."
+  },
+  {
+    "chemin": "registre-rgpd",
+    "ecran": "legal",
+    "onglet": "registre",
+    "titre": "Registre des activités de traitement",
+    "description": "Le registre prévu par l'article 30 du règlement européen : cinq traitements, leurs finalités, bases légales, destinataires, durées de conservation et mesures de sécurité."
+  }
+]

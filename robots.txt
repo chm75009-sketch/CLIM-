@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chm75009-sketch.github.io/CLIM-/sitemap.xml

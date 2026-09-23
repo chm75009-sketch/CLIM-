@@ -14,6 +14,7 @@ from datetime import date
 
 RACINE = os.path.dirname(os.path.abspath(__file__))
 SITE = "https://chm75009-sketch.github.io/CLIM-"
+VERSION = "1.0"
 
 # Les écrans qui n'ont pas de page à eux : fiche produit, tunnel de commande,
 # confirmation. Ils restent accessibles par le code, sans adresse propre.
@@ -59,6 +60,23 @@ def poser_liens(corps, prefixe, par_ecran, par_onglet):
     return re.sub(r'<a [^>]*data-(?:aller|legal)="[^"]+"[^>]*>', sur_lien, corps)
 
 
+MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet",
+        "août", "septembre", "octobre", "novembre", "décembre"]
+
+
+def en_toutes_lettres(j):
+    return "%d %s %d" % (j.day, MOIS[j.month - 1], j.year)
+
+
+def poser_reperes(corps):
+    """Remplit l'adresse et la version affichées au bas de l'accueil."""
+    court = SITE.split("://", 1)[1]
+    return (corps.replace("[[SITE_COURT]]", court)
+                 .replace("[[SITE]]", SITE)
+                 .replace("[[VERSION]]", VERSION)
+                 .replace("[[DATE]]", en_toutes_lettres(date.today())))
+
+
 def poser_chemins(corps, prefixe):
     """Réécrit les chemins des médias selon la profondeur de la page."""
     if not prefixe:
@@ -74,7 +92,8 @@ def fabriquer():
     for p in pages:
         chemin = p["chemin"]
         prefixe = "../" if chemin else ""
-        corps = poser_chemins(corps_source, prefixe)
+        corps = poser_reperes(corps_source)
+        corps = poser_chemins(corps, prefixe)
         corps = poser_liens(corps, prefixe, par_ecran, par_onglet)
 
         canonique = SITE + "/" + (chemin + "/" if chemin else "")

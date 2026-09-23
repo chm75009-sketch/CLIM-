@@ -696,6 +696,16 @@ button{ color:inherit; -webkit-text-fill-color:currentColor }
 .planches .visuel{ border:1.5px solid var(--ink); aspect-ratio:4/3 }
 .fiche .visuel{ border:1.5px solid var(--ink) }
 
+/* ---------- adresse et version, au bas de l'accueil ---------- */
+.plaque{ display:flex; flex-wrap:wrap; gap:16px 28px; justify-content:space-between; align-items:flex-end;
+  border:1.5px solid var(--ink); background:#fff; box-shadow:5px 5px 0 rgba(16,16,16,.10); padding:16px 18px }
+.plaque-titre{ display:block; font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--ink-3); margin-bottom:6px }
+.plaque-lien{ font-size:14px; color:var(--ember); text-decoration:underline; word-break:break-all; letter-spacing:.01em }
+.plaque-version span.mono{ font-size:20px; font-weight:600; color:var(--ink); display:flex; align-items:baseline; gap:10px }
+.plaque-version small{ font-family:"Public Sans",sans-serif; font-size:12.5px; font-weight:400; color:var(--ink-3) }
+@media(max-width:520px){ .plaque{ display:grid; gap:14px } }
+
 /* ---------- nos photos et vidéos ---------- */
 .medias{ display:grid; gap:16px; grid-template-columns:1fr }
 @media(min-width:900px){ .medias{ grid-template-columns:minmax(280px,360px) 1fr; gap:24px; align-items:start } }

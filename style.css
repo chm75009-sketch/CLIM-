@@ -811,3 +811,365 @@ button{ color:inherit; -webkit-text-fill-color:currentColor }
   font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3); font-weight:500;
 }
 .legal-lignes .val{color:var(--ink-2); font-size:14.5px}
+
+
+/* =====================================================================
+   IDENTITÉ C : PAPIER ET CUIVRE
+   Fond papier chaud, encre charbon, un accent cuivre, un second terre
+   brûlée. Typographie Archivo, Archivo Narrow pour les commandes,
+   Space Mono pour les chiffres. Bords fins, coins légèrement adoucis,
+   plus aucune ombre portée. Ce bloc passe en dernier : il ne change que
+   l'habillage, jamais le fonctionnement.
+   ===================================================================== */
+:root, :root[data-theme="dark"], :root[data-theme="light"]{
+  --paper:#F2EEE3; --char:#2A2721; --copper:#B2552C; --terra:#8C3B22;
+  --encre:#4B463D; --carte:#F9F6EE; --sourdine:#E7E1D1;
+
+  --ground:#F2EEE3; --surface:#F9F6EE; --surface-2:#E7E1D1; --panneau:#2A2721;
+  --ink:#2A2721; --ink-2:#4B463D; --ink-3:#736D62;
+  --line:rgba(42,39,33,.12); --line-fort:rgba(42,39,33,.20);
+  --glacier:#B2552C; --glacier-fort:#8C3B22; --glacier-voile:#F0E3D7;
+  --ember:#B2552C; --ember-clair:#D9763F; --ember-voile:#F0E3D7;
+  --laiton:#8C6A1E; --ok:#3F6B4E; --ok-voile:#E2EBE3;
+  --r:min(1vw,6px); --r-l:min(1vw,14px);
+  --ombre:none;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#F2EEE3; --surface:#F9F6EE; --surface-2:#E7E1D1; --panneau:#2A2721;
+    --ink:#2A2721; --ink-2:#4B463D; --ink-3:#736D62;
+    --line:rgba(42,39,33,.12); --line-fort:rgba(42,39,33,.20);
+    --glacier:#B2552C; --glacier-fort:#8C3B22; --glacier-voile:#F0E3D7;
+    --ember:#B2552C; --ember-clair:#D9763F; --ember-voile:#F0E3D7;
+    --ok:#3F6B4E; --ok-voile:#E2EBE3; --ombre:none;
+  }
+}
+
+/* le papier, uni */
+body{
+  background:var(--ground);
+  color:var(--ink);
+  font-family:"Archivo",ui-sans-serif,system-ui,-apple-system,sans-serif;
+  font-size:16px;
+  line-height:1.55;
+}
+.mono, .prix, .reference, .btu, .specs b, .devis td.p, .devis td.q,
+.legal-lignes .cle, .plaque-titre, .plaque-version span.mono, .credit-photo,
+.parcours-tete, .point-etape, .graduations, .palier, .fait b, .preuve .val{
+  font-family:"Space Mono",ui-monospace,SFMono-Regular,monospace;
+}
+
+/* titrage : plus de capitales, plus de condensé écrasé */
+h1, h2, .porte b.btu, .lecture .chiffre, .tableau-comp thead th, .pro-tete h1,
+.article h3, .metier b, .etape h3, .demarche h4, .legal-corps h3,
+.devis .tot b, .preuve .val{
+  font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;
+  font-weight:600; text-transform:none; letter-spacing:-.01em;
+}
+h1{ font-size:clamp(30px,5.2vw,46px); line-height:1.12; margin:18px 0 0; text-wrap:balance }
+h1 em{ color:var(--copper); font-style:italic; display:inline }
+h2{ font-size:clamp(23px,3.4vw,30px); line-height:1.18; text-wrap:balance }
+h3{ font-family:"Archivo",sans-serif; font-weight:600; text-transform:none }
+.chapo{ color:var(--ink-2); font-size:clamp(15px,1.6vw,18px); line-height:1.6; text-align:left }
+.tete{ border-bottom:0; padding-bottom:0; align-items:flex-end }
+.tete h2{ max-width:40ch }
+.tete p{ color:var(--ink-2) }
+
+/* le surtitre : une ligne de capitales cuivre, sans pastille */
+.oeil{
+  background:none; color:var(--copper); border-radius:0; padding:0;
+  font-family:"Space Mono",monospace; font-size:11px; font-weight:400;
+  letter-spacing:.2em; text-transform:uppercase; display:block; margin-bottom:10px;
+}
+.oeil.clair{ background:none; color:#E7B893 }
+
+/* bandeau d'annonce et en-tête */
+.annonce{ background:var(--char); color:rgba(242,238,227,.8) }
+.annonce .zone{ font-family:"Space Mono",monospace; font-size:11px; letter-spacing:.04em; padding-block:8px }
+.annonce b{ color:var(--paper); font-weight:700 }
+header.chapeau{ background:rgba(242,238,227,.92); border-bottom:1px solid rgba(42,39,33,.10); backdrop-filter:blur(10px) }
+@media(min-width:761px){ .chapeau .zone{ height:64px } }
+.sceau{
+  width:28px; height:28px; border-radius:0; background:var(--copper); color:var(--paper);
+  font-family:"Archivo",sans-serif; font-weight:700; font-size:14px;
+}
+.marque-nom{ font-family:"Archivo",sans-serif; font-weight:600; font-size:18px; letter-spacing:-.01em; text-transform:none; color:var(--char) }
+.marque-nom span{ font-family:"Space Mono",monospace; font-size:9px; letter-spacing:.18em; color:var(--ink-3) }
+nav.liens{ gap:28px }
+nav.liens a{
+  font-family:"Archivo Narrow","Archivo",sans-serif; font-size:15px; font-weight:500;
+  letter-spacing:0; text-transform:none; color:var(--ink-2); border-bottom:0; padding-block:4px;
+}
+nav.liens a:hover{ color:var(--copper) }
+nav.liens a.actif{
+  color:var(--char); border-bottom:0;
+  text-decoration:underline; text-decoration-color:var(--copper);
+  text-decoration-thickness:2px; text-underline-offset:4px;
+}
+.menu{ background:var(--carte); border-top:1px solid var(--line) }
+.menu a{ font-family:"Archivo Narrow","Archivo",sans-serif; font-weight:500; font-size:15.5px }
+.menu a:hover{ background:var(--sourdine) }
+.menu .groupe{ font-family:"Space Mono",monospace; font-size:10px; letter-spacing:.2em; color:var(--copper) }
+.menu a .flottant{ font-family:"Space Mono",monospace; font-size:11px }
+
+/* commandes : un filet fin, jamais d'ombre */
+.bouton{
+  font-family:"Archivo Narrow","Archivo",sans-serif; font-weight:600; font-size:15px;
+  letter-spacing:0; text-transform:none; border-radius:0; box-shadow:none;
+  background:transparent; color:var(--char); border:1px solid rgba(42,39,33,.25);
+  padding:11px 20px; transition:color .15s, background-color .15s, border-color .15s;
+}
+.bouton:hover{ background:transparent; color:var(--copper); border-color:var(--copper); box-shadow:none; transform:none }
+.bouton.fort{ background:var(--copper); border-color:var(--copper); color:var(--paper) }
+.bouton.fort:hover{ background:var(--terra); border-color:var(--terra); color:var(--paper) }
+.bouton.braise{ background:var(--char); border-color:var(--char); color:var(--paper) }
+.bouton.braise:hover{ background:var(--copper); border-color:var(--copper); color:var(--paper) }
+.bouton.clair{ background:transparent; border-color:rgba(242,238,227,.45); color:var(--paper); box-shadow:none }
+.bouton.clair:hover{ background:var(--paper); border-color:var(--paper); color:var(--char) }
+.bouton.fantome{ border-color:transparent; background:none; color:var(--ink-2) }
+.bouton.fantome:hover{ color:var(--copper); border-color:transparent }
+.bouton.grand{ padding:13px 22px; font-size:16px }
+.compte{ background:var(--copper); color:var(--paper); border-radius:0; font-family:"Space Mono",monospace; font-size:11px }
+.segments{ background:var(--carte); border:1px solid var(--line-fort); border-radius:0; padding:0 }
+.segments button{
+  font-family:"Archivo Narrow","Archivo",sans-serif; font-weight:600; font-size:14px;
+  letter-spacing:0; text-transform:none; border-radius:0; padding:9px 16px; color:var(--ink-2);
+}
+.segments button[aria-pressed="true"]{ background:var(--char); color:var(--paper); -webkit-text-fill-color:var(--paper) }
+
+/* accueil */
+.hero{ border-bottom:1px solid var(--line); background:var(--ground) }
+.hero::before{ background:none }
+.hero-photo{ background:var(--char); border-bottom:1px solid var(--line) }
+.hero-photo img{ opacity:.55 }
+.hero-photo::after{ background:linear-gradient(180deg, rgba(42,39,33,.35) 0%, rgba(42,39,33,.6) 55%, rgba(42,39,33,.92) 100%) }
+.hero-photo h1{ color:var(--paper); text-shadow:none }
+.hero-photo h1 em{ color:#E7B893 }
+.hero-photo .chapo{ color:rgba(242,238,227,.78) }
+.credit-photo{ color:rgba(242,238,227,.6); font-size:11px; letter-spacing:.15em }
+.faits{ border-top:1px solid var(--line) }
+.fait b{ font-family:"Archivo",sans-serif; font-weight:600; font-size:26px; color:var(--char) }
+.fait span{ font-family:"Space Mono",monospace; text-transform:uppercase; letter-spacing:.1em; font-size:10px; color:var(--ink-3) }
+.actions .bouton{ min-width:0 }
+
+/* la bande de chiffres : terre brûlée */
+.preuves{ background:var(--terra); border:0 }
+.preuves .zone{ padding-block:30px }
+.preuve .val{ font-family:"Archivo",sans-serif; font-weight:600; font-size:30px; line-height:1; color:var(--paper) }
+.preuve .quoi{ font-family:"Space Mono",monospace; color:rgba(242,238,227,.72); text-transform:uppercase; letter-spacing:.06em; font-size:11px; margin-top:8px }
+.preuve .etoiles{ color:rgba(242,238,227,.9) }
+
+/* l'outil de calcul : le seul bloc charbon de la page */
+.pupitre{
+  background:var(--char); border:0; border-radius:var(--r-l); box-shadow:none; color:var(--paper);
+}
+.pupitre h2{
+  font-family:"Space Mono",monospace; font-weight:400; font-size:11px; letter-spacing:.2em;
+  color:var(--copper); text-transform:uppercase;
+}
+.titre-outil{ font-family:"Archivo",sans-serif; font-weight:600; font-size:clamp(23px,3.2vw,30px); color:var(--paper); text-transform:none; line-height:1.2 }
+.mode-emploi{ color:rgba(242,238,227,.7); border-bottom:1px solid rgba(242,238,227,.15); font-size:15px }
+.etiquette-lecture{ font-family:"Space Mono",monospace; font-size:11px; letter-spacing:.1em; color:rgba(242,238,227,.6) }
+.lecture .chiffre{ font-family:"Archivo",sans-serif; font-weight:600; font-size:clamp(40px,7vw,52px); color:var(--copper) }
+.lecture .unite{ color:rgba(242,238,227,.6); font-family:"Space Mono",monospace; letter-spacing:.06em }
+.reglette label{ font-family:"Space Mono",monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:rgba(242,238,227,.6) }
+.reglette label b{ font-family:"Space Mono",monospace; color:var(--paper); font-size:14px }
+.graduations{ color:rgba(242,238,227,.5); font-size:10px }
+input[type=range]{ accent-color:var(--copper) }
+input[type=range]::-webkit-slider-runnable-track{ height:6px; border-radius:99px; background:rgba(242,238,227,.22) }
+input[type=range]::-moz-range-track{ height:6px; border-radius:99px; background:rgba(242,238,227,.22) }
+input[type=range]::-webkit-slider-thumb{ width:20px; height:20px; margin-top:-7px; background:var(--copper); border:0; box-shadow:none }
+input[type=range]::-moz-range-thumb{ width:20px; height:20px; background:var(--copper); border:0 }
+.bascule{
+  border-radius:0; border:1px solid rgba(242,238,227,.2); background:rgba(242,238,227,.05);
+  font-family:"Archivo Narrow","Archivo",sans-serif; font-size:15px; color:rgba(242,238,227,.8);
+}
+.bascule:has(input:checked){ border-color:var(--copper); background:rgba(178,85,44,.22); color:var(--paper) }
+.bascule input{ accent-color:var(--copper) }
+.verdict{ border-top:1px solid rgba(242,238,227,.15) }
+.verdict p{ color:rgba(242,238,227,.7) }
+.verdict p b{ color:var(--copper) }
+#outil .pupitre{ padding:26px }
+@media(min-width:900px){ #outil .pupitre{ padding:34px 40px } }
+
+/* surfaces : une carte claire, un filet, un coin adouci */
+.filtres, .recap, .devis, .encart, .carte-form, .panneau-config, .fiche-societe,
+.acc, .ligne, .depliant, .brique, .duel, .achat, .verrou, .boite-comp,
+.avis blockquote, .metier, .vide, .pro-avantage, .porte, .article, .demarche,
+.legal-fiche, .plaque, .cadre-video, .cliche, .legal-cadre{
+  background:var(--carte); border:1px solid rgba(42,39,33,.10); border-radius:var(--r-l); box-shadow:none;
+}
+.porte:hover, .article:hover, .metier:hover{ transform:none; box-shadow:none; border-color:rgba(178,85,44,.6) }
+.porte b.btu{ font-family:"Archivo",sans-serif; font-weight:600; font-size:32px; color:var(--char) }
+.porte span.piece{ color:var(--ink-2); font-size:14.5px }
+.porte span.des{ font-family:"Space Mono",monospace; font-size:11px; letter-spacing:.04em; color:var(--ink-3) }
+
+/* fiches produit */
+.article.conseille{ border-color:var(--copper); box-shadow:0 0 0 1px var(--copper) }
+.visuel{ background:var(--sourdine); border-bottom:1px solid rgba(42,39,33,.10); border-radius:var(--r-l) var(--r-l) 0 0 }
+.visuel::after{ background:rgba(242,238,227,.85); border:0; color:var(--ink-3); font-family:"Space Mono",monospace; font-size:10px; letter-spacing:.1em; padding:3px 8px }
+.drapeau{
+  border-radius:var(--r); border:0; background:var(--copper); color:var(--paper);
+  font-family:"Space Mono",monospace; font-size:10px; letter-spacing:.06em; padding:4px 8px; font-weight:400;
+}
+.drapeau.calme{ background:rgba(42,39,33,.06); color:var(--char); border:1px solid rgba(42,39,33,.12) }
+.drapeau.chaud{ background:var(--char); color:var(--paper) }
+.reference{
+  background:rgba(42,39,33,.05); border:1px solid rgba(42,39,33,.10); border-radius:var(--r);
+  color:var(--char); font-family:"Space Mono",monospace; font-size:11px; letter-spacing:.04em;
+  text-transform:none; padding:5px 8px;
+}
+.article h3{ font-size:20px }
+.btu{ border-top:1px solid var(--line); padding-top:8px; font-family:"Space Mono",monospace; color:var(--ink-2) }
+.btu strong{ font-family:"Archivo",sans-serif; font-weight:600; font-size:22px; color:var(--char) }
+.specs{
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  background:transparent; padding:11px 0; margin-inline:0;
+}
+.specs span{ font-family:"Archivo Narrow","Archivo",sans-serif; text-transform:none; letter-spacing:0; font-size:13px; color:var(--ink-3) }
+.specs b{ font-family:"Space Mono",monospace; font-size:12.5px; color:var(--char) }
+.prix{ font-family:"Space Mono",monospace; font-weight:700; font-size:19px; letter-spacing:-.01em; color:var(--char) }
+.prix small{ font-family:"Space Mono",monospace; font-weight:400; color:var(--ink-3); letter-spacing:0; font-size:11px }
+.comparer{ font-family:"Archivo Narrow","Archivo",sans-serif; text-transform:none; letter-spacing:0; font-size:13px; font-weight:500; border-top:1px solid var(--line) }
+.table-specs th{ font-family:"Archivo Narrow","Archivo",sans-serif; color:var(--ink-3) }
+.table-specs td{ font-family:"Space Mono",monospace; font-size:13px }
+
+/* formulaires */
+.recherche input, .barre select, .champ input, .champ select,
+.champ-court input, .champ-court select, .tri select, #tri{
+  background:var(--carte); border:1px solid rgba(42,39,33,.18); border-radius:var(--r); color:var(--char);
+  font-family:"Archivo",sans-serif;
+}
+.recherche input:focus, .champ input:focus, .champ select:focus{ outline:2px solid var(--copper); outline-offset:1px }
+.mode, .pose-option, .interrupteur, .espace, .depot, .choix label{
+  border-radius:var(--r); border:1px solid rgba(42,39,33,.18); background:var(--carte);
+}
+.choix label{ border-radius:99px; font-family:"Archivo Narrow","Archivo",sans-serif; font-size:14.5px }
+.mode:has(input:checked), .pose-option:has(input:checked), .interrupteur:has(input:checked),
+.espace.actif, .choix label:has(input:checked){
+  background:var(--ember-voile); border-color:var(--copper); color:var(--terra);
+}
+input[type=checkbox], input[type=radio]{ accent-color:var(--copper) }
+.champ label, .champ-court label{ font-family:"Archivo Narrow","Archivo",sans-serif; color:var(--ink-2) }
+.aide-champ{ font-family:"Archivo",sans-serif; color:var(--ink-3) }
+.bloc-filtre p{ font-family:"Space Mono",monospace; font-size:10.5px; letter-spacing:.16em; color:var(--copper); text-transform:uppercase }
+.case{ font-family:"Archivo Narrow","Archivo",sans-serif; font-size:14.5px }
+.case .nb{ font-family:"Space Mono",monospace; font-size:11px }
+.compteur{ font-family:"Space Mono",monospace; font-size:12.5px; color:var(--ink-3) }
+
+/* professionnels */
+.pro-tete{ background:var(--char); border-bottom:0 }
+.pro-tete h1{ color:var(--paper); font-family:"Archivo",sans-serif; font-weight:600; text-transform:none }
+.pro-tete h1 em{ color:#E7B893 }
+.pro-tete p{ color:rgba(242,238,227,.72) }
+.pro-avantage{ background:rgba(242,238,227,.06); border:1px solid rgba(242,238,227,.14); border-radius:var(--r-l) }
+.pro-avantage b{ color:var(--paper) }
+.pro-avantage span{ color:rgba(242,238,227,.7) }
+.pro-avantage i{ font-family:"Archivo",sans-serif; font-weight:600; font-size:17px; color:#E7B893 }
+.metier .pictogramme{ background:var(--ember-voile); color:var(--terra); border-radius:var(--r) }
+.metier[aria-pressed="true"]{ background:var(--ember-voile); border-color:var(--copper); box-shadow:none }
+.metier b{ font-family:"Archivo",sans-serif; font-weight:600; font-size:18px; text-transform:none }
+.metier span{ color:var(--ink-2) }
+.devis h3{ border-bottom:1px solid var(--line); padding-bottom:10px; font-family:"Archivo",sans-serif; font-weight:600 }
+.devis h3 span{ font-family:"Space Mono",monospace; color:var(--ink-3) }
+.devis .tot b{ font-family:"Space Mono",monospace; font-weight:700; font-size:22px }
+.palier{ border-radius:99px; border:1px solid var(--line-fort); font-size:11px; letter-spacing:.02em; color:var(--ink-3) }
+.palier.atteint{ background:var(--ok-voile); border-color:var(--ok); color:var(--ok) }
+.parcours{ border-bottom:1px solid var(--line) }
+.parcours-tete{ font-size:11px; letter-spacing:.1em; color:var(--ink-3) }
+.jauge{ height:6px; border:0; background:rgba(42,39,33,.12); border-radius:99px; overflow:hidden }
+.jauge i{ background:var(--copper) }
+.point-etape{
+  width:34px; height:34px; border:1px solid var(--line-fort); background:var(--carte);
+  border-radius:99px; font-size:12.5px; color:var(--ink-2);
+}
+.points .point-etape{ flex:0 0 34px }
+.point-etape[data-etat="ici"]{ background:var(--copper); border-color:var(--copper); color:var(--paper); -webkit-text-fill-color:var(--paper) }
+.point-etape[data-etat="faite"]{ background:var(--char); border-color:var(--char); color:var(--paper); -webkit-text-fill-color:var(--paper) }
+.point-etape:hover{ outline:2px solid var(--copper); outline-offset:1px }
+.etape h3{ font-size:clamp(19px,2.8vw,23px); text-transform:none }
+.groupe-q > p.q{ font-family:"Space Mono",monospace; font-size:10.5px; letter-spacing:.16em; color:var(--copper) }
+.vigilance b{ font-family:"Space Mono",monospace; font-size:10.5px; letter-spacing:.14em; color:var(--copper) }
+.pastille-etude{ background:var(--ember-voile); color:var(--terra); border-radius:var(--r); font-family:"Space Mono",monospace; font-weight:400 }
+.bandeau-compte{ border-radius:var(--r-l); border:1px solid var(--ok); background:var(--ok-voile) }
+.jeton-societe{ border-radius:99px; border:1px solid var(--line-fort); background:var(--carte); color:var(--char) }
+.verrou .cadenas, .fini .coche{ border-radius:99px; background:var(--copper); color:var(--paper) }
+.masque{ font-family:"Space Mono",monospace; color:var(--ink-3) }
+
+/* où poser le groupe */
+.demarche{ padding:16px }
+.demarche.obligatoire{ border-left:4px solid var(--copper) }
+.demarche.vigilance{ border-left:4px solid var(--char) }
+.demarche.libre{ border-left:4px solid var(--ok) }
+.demarche h4{ font-family:"Archivo",sans-serif; font-weight:600; font-size:17px; text-transform:none }
+.demarche .delai{ font-family:"Space Mono",monospace; font-size:10.5px; letter-spacing:.12em; color:var(--copper) }
+.demarche .source{ border-top:1px solid var(--line); color:var(--ink-3) }
+.modele-lettre{ background:var(--sourdine); border:1px solid var(--line); border-radius:var(--r); font-family:"Space Mono",monospace; font-size:12.5px }
+
+/* dépliants et pages légales */
+.depliant summary{ font-family:"Archivo",sans-serif; font-weight:600 }
+.depliant summary::after{ color:var(--copper) }
+.legal-menu{ border:1px solid rgba(42,39,33,.10); background:var(--carte); box-shadow:none; border-radius:var(--r-l); overflow:hidden }
+.legal-menu button{
+  font-family:"Archivo Narrow","Archivo",sans-serif; font-weight:600; font-size:14px;
+  letter-spacing:0; text-transform:none; border:0; border-bottom:1px solid var(--line);
+  background:transparent; color:var(--ink-2); padding:13px 16px;
+}
+.legal-menu button:last-child{ border-bottom:0 }
+.legal-menu button span{ font-family:"Space Mono",monospace; font-size:11px; color:var(--ink-3) }
+.legal-menu button:hover{ background:var(--sourdine); color:var(--char) }
+.legal-menu button.actif{ background:var(--copper); color:var(--paper); -webkit-text-fill-color:var(--paper) }
+.legal-menu button.actif span{ color:rgba(242,238,227,.7) }
+@media(max-width:899px){ .legal-menu{ border-radius:var(--r-l) } }
+.legal-corps h3{
+  font-family:"Archivo",sans-serif; font-weight:600; font-size:clamp(18px,2.4vw,21px);
+  text-transform:none; border-top:1px solid var(--line); color:var(--char);
+}
+.legal-corps a{ color:var(--copper) }
+.legal-date{ font-family:"Space Mono",monospace; letter-spacing:.06em; color:var(--ink-3) }
+.legal-cadre{ padding:18px }
+.legal-alerte{ border-left:4px solid var(--copper); background:var(--ember-voile) }
+.legal-fiche > summary{ font-family:"Archivo",sans-serif; font-weight:600 }
+.legal-fiche > summary::after{ font-family:"Space Mono",monospace; color:var(--copper) }
+.legal-fiche[open] > summary{ background:var(--char); color:var(--paper) }
+.legal-fiche[open] > summary::after{ color:var(--paper) }
+.legal-lignes .cle{ font-size:10.5px; letter-spacing:.14em; color:var(--copper) }
+.formule-type{ background:var(--sourdine); border:1px solid var(--line); border-radius:var(--r); font-family:"Space Mono",monospace; font-size:12.5px }
+
+/* médias, plaque, bas de page */
+.cadre-video{ background:var(--char) }
+.cadre-video .legende{ background:var(--char); color:var(--paper); font-family:"Space Mono",monospace; font-size:10px; letter-spacing:.12em }
+.cliche figcaption{ background:rgba(242,238,227,.9); border:0; font-family:"Space Mono",monospace; font-size:10px; letter-spacing:.1em; color:var(--ink-2) }
+.plaque{ padding:18px }
+.plaque-titre{ font-family:"Space Mono",monospace; letter-spacing:.2em; color:var(--copper) }
+.plaque-lien{ font-family:"Space Mono",monospace; color:var(--copper) }
+.plaque-version span.mono{ font-family:"Archivo",sans-serif; font-weight:600; font-size:22px; color:var(--char) }
+.plaque-version small{ font-family:"Archivo",sans-serif; color:var(--ink-3) }
+footer.socle{ background:var(--char); color:rgba(242,238,227,.7); border-top:0 }
+footer.socle h4{ font-family:"Space Mono",monospace; font-size:10.5px; letter-spacing:.2em; color:var(--copper); text-transform:uppercase }
+footer.socle a:hover{ color:var(--paper) }
+footer.socle .mono{ font-family:"Space Mono",monospace }
+.mentions{ border-top:1px solid rgba(242,238,227,.12); color:rgba(242,238,227,.5) }
+
+/* comparateur, messages, avis */
+.barre-comparer{ background:var(--char); color:var(--paper); border:0; border-radius:99px }
+.barre-comparer .bouton{ background:var(--copper); border-color:var(--copper); color:var(--paper) }
+.barre-comparer .bouton:hover{ background:var(--terra); border-color:var(--terra) }
+.barre-comparer .bouton.fantome{ background:none; border-color:transparent; color:rgba(242,238,227,.7) }
+.voile-comp{ background:rgba(42,39,33,.55) }
+.tableau-comp thead th{ font-size:17px }
+.message{ background:var(--char); color:var(--paper); border-radius:var(--r); font-weight:500; letter-spacing:0; font-family:"Archivo",sans-serif }
+.avis blockquote{ padding:20px }
+.etoiles, .avis .etoiles, .note-ligne .etoiles{ color:var(--copper) }
+.avis cite{ font-family:"Space Mono",monospace; font-size:12px; color:var(--ink-3) }
+.economie{ background:var(--ok-voile); color:var(--ok); border:1px solid var(--ok); border-radius:var(--r) }
+.quantite{ border-radius:var(--r); border:1px solid var(--line-fort) }
+.quantite button{ background:var(--carte); color:var(--char) }
+.quantite button:hover{ background:var(--sourdine) }
+.fini .numero{ font-family:"Space Mono",monospace }
+:focus-visible{ outline:2px solid var(--copper); outline-offset:2px; border-radius:2px }
+
+/* Le formulaire type contient de longues lignes de points : on les laisse
+   défiler dans leur cadre plutôt que d'élargir la page. */
+.legal-grille > *{ min-width:0 }
+.formule-type{ overflow-x:auto; font-size:12px }

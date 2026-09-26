@@ -158,7 +158,7 @@ PATRON = """<!DOCTYPE html>
 <meta property="og:url" content="{canonique}">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Anton&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=Archivo+Narrow:wght@500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap">
 <link rel="stylesheet" href="{prefixe}style.css">
 </head>
 <body{attributs}>

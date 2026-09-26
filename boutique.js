@@ -72,7 +72,7 @@
   /* Planches techniques : vue de face, vue de profil, groupe extérieur.
      Trait noir, cotation, hachures, un seul accent orange. */
   function visuel(p, vue){
-    var trait = "#101010", accent = "#E8500F", gris = "#8C8C83", papier = "#F2F1EC";
+    var trait = "#2A2721", accent = "#B2552C", gris = "#736D62", papier = "#F2EEE3";
     vue = vue || "face";
 
     if (!p.btu) {
@@ -101,7 +101,7 @@
         '<rect x="240" y="66" width="52" height="98" fill="url(#h' + p.ref + ')" stroke="' + trait + '" stroke-width="1.5"/>' +
         '<rect x="112" y="178" width="24" height="10" fill="' + trait + '"/>' +
         '<rect x="264" y="178" width="24" height="10" fill="' + trait + '"/>' +
-        '<text x="200" y="42" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="3" fill="' + gris + '">GROUPE EXTÉRIEUR</text>' +
+        '<text x="200" y="42" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" letter-spacing="3" fill="' + gris + '">GROUPE EXTÉRIEUR</text>' +
         '</svg>';
     }
 
@@ -112,8 +112,8 @@
         '<path d="M168 140 l84 -10" stroke="' + accent + '" stroke-width="2.5"/>' +
         '<g stroke="' + trait + '" stroke-width="1"><path d="M150 164 v14"/><path d="M284 164 v14"/><path d="M150 171 h134"/></g>' +
         '<rect x="186" y="164" width="62" height="14" fill="' + papier + '"/>' +
-        '<text x="217" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#4C4C46">' + (P ? P + " cm" : "") + '</text>' +
-        '<text x="200" y="42" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="3" fill="' + gris + '">PROFIL, PROFONDEUR</text>' +
+        '<text x="217" y="175" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#4B463D">' + (P ? P + " cm" : "") + '</text>' +
+        '<text x="200" y="42" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" letter-spacing="3" fill="' + gris + '">PROFIL, PROFONDEUR</text>' +
         '</svg>';
     }
 
@@ -124,21 +124,21 @@
       lames += '<path d="M' + (x + 16) + " " + (y + h - 26 + i * 6) + " h" + (largeur - 32) + '"/>';
     }
     return '<svg viewBox="30 26 340 190" aria-hidden="true">' +
-      '<text x="200" y="150" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="150" fill="#101010" opacity=".06">' + p.btu / 1000 + 'K</text>' +
+      '<text x="200" y="150" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="150" fill="#2A2721" opacity=".05">' + p.btu / 1000 + 'K</text>' +
       '<rect x="' + x + '" y="' + y + '" width="' + largeur + '" height="' + h + '" rx="10" fill="' + fond + '" stroke="' + trait + '" stroke-width="2"/>' +
       '<path d="M' + x + " " + (y + h - 30) + " h" + largeur + '" stroke="' + trait + '" stroke-width="1.2" opacity=".6"/>' +
       '<g stroke="' + ligne + '" stroke-width="1.1">' + lames + '</g>' +
-      '<rect x="' + (x + largeur - 62) + '" y="' + (y + 18) + '" width="44" height="13" rx="2" fill="' + (noir ? "#000" : "#101010") + '" opacity=".85"/>' +
-      '<text x="' + (x + largeur - 40) + '" y="' + (y + 28) + '" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#F0913E">' + (p.btu / 1000) + 'K</text>' +
+      '<rect x="' + (x + largeur - 62) + '" y="' + (y + 18) + '" width="44" height="13" rx="2" fill="' + (noir ? "#000" : "#2A2721") + '" opacity=".85"/>' +
+      '<text x="' + (x + largeur - 40) + '" y="' + (y + 28) + '" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#E7B893">' + (p.btu / 1000) + 'K</text>' +
       '<circle cx="' + (x + largeur - 74) + '" cy="' + (y + 24) + '" r="3.5" fill="' + accent + '"/>' +
-      '<text x="' + (x + 18) + '" y="' + (y + 28) + '" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="2.5" fill="' + (noir ? "#9A968C" : "#8C8C83") + '">MAXIPOWER</text>' +
+      '<text x="' + (x + 18) + '" y="' + (y + 28) + '" font-family="Space Mono, monospace" font-size="9" letter-spacing="2.5" fill="' + (noir ? "#A39B8C" : "#736D62") + '">MAXIPOWER</text>' +
       '<path d="M' + (x + 18) + " " + (y + 40) + " h" + Math.round(largeur * 0.42) + '" stroke="' + ligne + '" stroke-width="1"/>' +
       '<g stroke="' + trait + '" stroke-width="1"><path d="M' + x + ' 158 v16"/><path d="M' + (x + largeur) + ' 158 v16"/><path d="M' + x + ' 166 h' + largeur + '"/></g>' +
       '<rect x="' + (200 - 30) + '" y="158" width="60" height="16" fill="' + papier + '"/>' +
-      '<text x="200" y="170" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#4C4C46">' + (L ? L + " cm" : "") + '</text>' +
+      '<text x="200" y="170" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#4B463D">' + (L ? L + " cm" : "") + '</text>' +
       '<g stroke="' + accent + '" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".9">' +
       '<path d="M148 192 q26 14 52 0"/><path d="M204 202 q26 14 52 0"/></g>' +
-      '<text x="' + (x + largeur + 6) + '" y="' + (y + h + 4) + '" font-family="IBM Plex Mono, monospace" font-size="9" fill="' + gris + '">H. ' + (H || "") + '</text>' +
+      '<text x="' + (x + largeur + 6) + '" y="' + (y + h + 4) + '" font-family="Space Mono, monospace" font-size="9" fill="' + gris + '">H. ' + (H || "") + '</text>' +
       '</svg>';
   }
 
@@ -768,18 +768,18 @@ Date : ......................</div>
   var ACCUEIL = {
     part: {
       oeil: "MaxiPower, fabricant de climatiseurs",
-      titre: 'Tout est fluide :<em>le circuit, la livraison, la pose.</em>',
+      titre: 'Tout est fluide : <em>le circuit, la livraison, la pose.</em>',
       chapo: "Dix modèles tropicalisés, de 12 000 à 24 000 BTU, à partir de 449 &euro;. Ils rafraîchissent l'été, chauffent l'hiver et tiennent la canicule jusqu'à 54 &deg;C dehors. Livrés sous 48 heures, posés par un frigoriste certifié, garantis 3 ans et 5 ans sur le compresseur.",
       actions: '<button class="bouton fort grand" type="button" data-aller="catalogue">Voir les climatiseurs</button>' +
-               '<button class="bouton grand" type="button" id="vers-pupitre">Calculer ma puissance</button>',
+               '<button class="bouton grand clair" type="button" id="vers-pupitre">Calculer ma puissance</button>',
       faits: [["10", "Modèles au catalogue"], ["54 &deg;C", "Tenue en canicule"], ["48 h", "Expédition"], ["5 ans", "Garantie compresseur"]]
     },
     pro: {
       oeil: "Vente directe aux professionnels",
-      titre: 'Un devis fluide,<em>un chantier sans fuite.</em>',
+      titre: 'Un devis fluide, <em>un chantier sans fuite.</em>',
       chapo: "Prix hors taxes du fabricant, remise de 5 à 15 % selon le nombre d'unités, pose par nos installateurs partenaires en dehors de vos heures de service, un interlocuteur unique et un dépannage sous 48 heures. Le devis se chiffre en ligne, pièce par pièce.",
       actions: '<button class="bouton fort grand" type="button" data-aller="pro">Évaluer mes besoins</button>' +
-               '<button class="bouton grand" type="button" data-aller="catalogue">Catalogue au prix HT</button>',
+               '<button class="bouton grand clair" type="button" data-aller="catalogue">Catalogue au prix HT</button>',
       faits: [["15 %", "Remise maximale"], ["120", "Installateurs partenaires"], ["48 h", "Dépannage prioritaire"], ["6 h", "Pose hors service"]]
     }
   };
